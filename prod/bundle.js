@@ -950,23 +950,16 @@ var _reactDom2 = _interopRequireDefault(_reactDom);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-function formatName(user) {
-    return user.firstName + ' ' + user.lastName;
+function Welcome(props) {
+    return _react2.default.createElement(
+        'h1',
+        null,
+        'Hello, ',
+        props.name
+    );
 }
 
-var user = {
-    firstName: 'Harper',
-    lastName: 'Perez'
-};
-
-var element = _react2.default.createElement(
-    'h1',
-    null,
-    'Hello, ',
-    formatName(user),
-    '!'
-);
-
+var element = _react2.default.createElement(Welcome, { name: 'Sara' });
 _reactDom2.default.render(element, document.getElementById('root'));
 
 /***/ }),
