@@ -4,7 +4,6 @@ export default class SearchBar extends React.Component {
     }
 
 
-
     render () {
         return <div>
             <label>Поиск продуктов<br/>

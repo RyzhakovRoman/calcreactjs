@@ -1,13 +1,24 @@
 import ProductTr from './ProductTr';
+import ProductCategoryTr from './ProductCategoryTr';
+
 
 export default class ProductTable extends React.Component {
     constructor (props) {
         super(props);
+
     }
 
+
     getFilteredProducts () {
+        let lastCategory = '';
+
         return this.props.products.map((item) => {
-            return <ProductTr name={item.name} price={item.price} stocked={item.stocked} key={item.name}/>
+            if (item.category !== lastCategory) {
+                lastCategory = item.category;
+                return <ProductCategoryTr category={item.category} key={item.category}/>
+            } else {
+                return <ProductTr product={item} key={item.name}/>
+            }
         });
     }
 

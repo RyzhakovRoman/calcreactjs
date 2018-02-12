@@ -4,11 +4,10 @@ export default class ProductTr extends React.Component {
     }
 
 
-
     render () {
         return <tr>
-            <td className={(!this.props.stocked) ? 'red' : ''}>{this.props.name}</td>
-            <td>{this.props.price}</td>
+            <td className={(!this.props.product.stocked) ? 'red' : ''}>{this.props.product.name}</td>
+            <td>{this.props.product.price}</td>
         </tr>
     }
 }

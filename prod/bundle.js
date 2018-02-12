@@ -948,13 +948,13 @@ var _reactDom = __webpack_require__(18);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _FilterableProductTable = __webpack_require__(27);
+var _FilterableProductsTable = __webpack_require__(27);
 
-var _FilterableProductTable2 = _interopRequireDefault(_FilterableProductTable);
+var _FilterableProductsTable2 = _interopRequireDefault(_FilterableProductsTable);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-_reactDom2.default.render(_react2.default.createElement(_FilterableProductTable2.default, null), document.getElementById('root'));
+_reactDom2.default.render(_react2.default.createElement(_FilterableProductsTable2.default, null), document.getElementById('root'));
 
 /***/ }),
 /* 15 */
@@ -18285,7 +18285,7 @@ var _ProductTable = __webpack_require__(29);
 
 var _ProductTable2 = _interopRequireDefault(_ProductTable);
 
-var _products = __webpack_require__(31);
+var _products = __webpack_require__(32);
 
 var _products2 = _interopRequireDefault(_products);
 
@@ -18306,8 +18306,8 @@ var FilterableProductTable = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (FilterableProductTable.__proto__ || Object.getPrototypeOf(FilterableProductTable)).call(this, props));
 
         _this.state = {
-            filterText: ''
-
+            filterText: '',
+            isStocked: false
         };
         return _this;
     }
@@ -18406,6 +18406,10 @@ var _ProductTr = __webpack_require__(30);
 
 var _ProductTr2 = _interopRequireDefault(_ProductTr);
 
+var _ProductCategoryTr = __webpack_require__(31);
+
+var _ProductCategoryTr2 = _interopRequireDefault(_ProductCategoryTr);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -18426,8 +18430,15 @@ var ProductTable = function (_React$Component) {
     _createClass(ProductTable, [{
         key: 'getFilteredProducts',
         value: function getFilteredProducts() {
+            var lastCategory = '';
+
             return this.props.products.map(function (item) {
-                return React.createElement(_ProductTr2.default, { name: item.name, price: item.price, stocked: item.stocked, key: item.name });
+                if (item.category !== lastCategory) {
+                    lastCategory = item.category;
+                    return React.createElement(_ProductCategoryTr2.default, { category: item.category, key: item.category });
+                } else {
+                    return React.createElement(_ProductTr2.default, { product: item, key: item.name });
+                }
             });
         }
     }, {
@@ -18501,13 +18512,13 @@ var ProductTr = function (_React$Component) {
                 null,
                 React.createElement(
                     'td',
-                    { className: !this.props.stocked ? 'red' : '' },
-                    this.props.name
+                    { className: !this.props.product.stocked ? 'red' : '' },
+                    this.props.product.name
                 ),
                 React.createElement(
                     'td',
                     null,
-                    this.props.price
+                    this.props.product.price
                 )
             );
         }
@@ -18521,6 +18532,55 @@ exports.default = ProductTr;
 
 /***/ }),
 /* 31 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(React) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ProductCategoryTr = function (_React$Component) {
+    _inherits(ProductCategoryTr, _React$Component);
+
+    function ProductCategoryTr(props) {
+        _classCallCheck(this, ProductCategoryTr);
+
+        return _possibleConstructorReturn(this, (ProductCategoryTr.__proto__ || Object.getPrototypeOf(ProductCategoryTr)).call(this, props));
+    }
+
+    _createClass(ProductCategoryTr, [{
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "tr",
+                null,
+                React.createElement(
+                    "td",
+                    { colSpan: 2 },
+                    this.props.category
+                )
+            );
+        }
+    }]);
+
+    return ProductCategoryTr;
+}(React.Component);
+
+exports.default = ProductCategoryTr;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 32 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
