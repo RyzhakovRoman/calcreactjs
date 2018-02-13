@@ -8,7 +8,7 @@ const providePlugin = new webpack.ProvidePlugin({
 
 
 module.exports = {
-    entry: './src/js/calc.jsx',
+    entry: './src/js/app.jsx',
     output: {
         filename: 'calcBundle.js',
         path: path.resolve(__dirname, 'prod')
