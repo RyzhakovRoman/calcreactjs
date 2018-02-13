@@ -18309,18 +18309,44 @@ var FilterableProductTable = function (_React$Component) {
             filterText: '',
             isStocked: false
         };
+
+        _this.setFilterText = _this.setFilterText.bind(_this);
+        _this.setIsStocked = _this.setIsStocked.bind(_this);
         return _this;
     }
 
     _createClass(FilterableProductTable, [{
+        key: 'setFilterText',
+        value: function setFilterText(e) {
+            this.setState({
+                filterText: e.target.value
+            });
+        }
+    }, {
+        key: 'setIsStocked',
+        value: function setIsStocked(e) {
+            this.setState({
+                isStocked: e.target.checked
+            });
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
                 'div',
                 null,
                 '\u0422\u0430\u0431\u043B\u0438\u0446\u0430 \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u043E\u0432, \u0441 \u0444\u0438\u043B\u044C\u0442\u0440\u0430\u0446\u0438\u0435\u0439',
-                React.createElement(_SearchBar2.default, null),
-                React.createElement(_ProductTable2.default, { products: _products2.default })
+                React.createElement(_SearchBar2.default, {
+                    filterText: this.state.filterText,
+                    isStoked: this.state.isStocked,
+                    funcHandlerInputFilterText: this.setFilterText,
+                    funcHandlerInputIsStocked: this.setIsStocked
+                }),
+                React.createElement(_ProductTable2.default, {
+                    products: _products2.default,
+                    filterText: this.state.filterText,
+                    isStocked: this.state.isStocked
+                })
             );
         }
     }]);
@@ -18370,13 +18396,21 @@ var SearchBar = function (_React$Component) {
                     null,
                     "\u041F\u043E\u0438\u0441\u043A \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u043E\u0432",
                     React.createElement("br", null),
-                    React.createElement("input", { type: "text" })
+                    React.createElement("input", {
+                        type: "text",
+                        value: this.props.filterText,
+                        onChange: this.props.funcHandlerInputFilterText
+                    })
                 ),
                 React.createElement("br", null),
                 React.createElement(
                     "label",
                     null,
-                    React.createElement("input", { type: "checkbox" }),
+                    React.createElement("input", {
+                        type: "checkbox",
+                        value: this.props.isStocked,
+                        onChange: this.props.funcHandlerInputIsStocked
+                    }),
                     "\u041F\u043E\u043A\u0430\u0437\u0430\u0442\u044C \u0442\u043E\u043B\u044C\u043A\u043E \u043F\u0440\u043E\u0434\u0443\u043A\u0442\u044B \u0432 \u043D\u0430\u043B\u0438\u0447\u0438\u0438"
                 )
             );
@@ -18430,14 +18464,19 @@ var ProductTable = function (_React$Component) {
     _createClass(ProductTable, [{
         key: 'getFilteredProducts',
         value: function getFilteredProducts() {
+            var _this2 = this;
+
             var lastCategory = '';
 
-            return this.props.products.map(function (item) {
-                if (item.category !== lastCategory) {
-                    lastCategory = item.category;
-                    return React.createElement(_ProductCategoryTr2.default, { category: item.category, key: item.category });
+            return this.props.products.map(function (prod) {
+                if (prod.name.toLowerCase().indexOf(_this2.props.filterText) === -1 || !prod.stocked && _this2.props.isStocked) {
+                    return;
+                }
+                if (prod.category !== lastCategory) {
+                    lastCategory = prod.category;
+                    return React.createElement(_ProductCategoryTr2.default, { category: prod.category, key: prod.category });
                 } else {
-                    return React.createElement(_ProductTr2.default, { product: item, key: item.name });
+                    return React.createElement(_ProductTr2.default, { product: prod, key: prod.name });
                 }
             });
         }

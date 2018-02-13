@@ -1,6 +1,7 @@
 export default class ProductTr extends React.Component {
     constructor (props) {
         super(props);
+
     }
 
 

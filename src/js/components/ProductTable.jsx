@@ -12,12 +12,15 @@ export default class ProductTable extends React.Component {
     getFilteredProducts () {
         let lastCategory = '';
 
-        return this.props.products.map((item) => {
-            if (item.category !== lastCategory) {
-                lastCategory = item.category;
-                return <ProductCategoryTr category={item.category} key={item.category}/>
+        return this.props.products.map((prod) => {
+            if (prod.name.toLowerCase().indexOf(this.props.filterText) === -1 || (!prod.stocked && this.props.isStocked)) {
+                return;
+            }
+            if (prod.category !== lastCategory) {
+                lastCategory = prod.category;
+                return <ProductCategoryTr category={prod.category} key={prod.category}/>
             } else {
-                return <ProductTr product={item} key={item.name}/>
+                return <ProductTr product={prod} key={prod.name}/>;
             }
         });
     }
