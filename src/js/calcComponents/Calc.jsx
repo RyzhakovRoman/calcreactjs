@@ -14,17 +14,32 @@ export default class Calc extends React.Component {
                     amountDays: null
                 },
                 birthdaysDates: [],
+            },
+            localState: {
+                step: 1
             }
-        }
+        };
+
+        this.calculate = this.calculate.bind(this);
+        this.setDataForFirstCalculation = this.setDataForFirstCalculation.bind(this);
+    }
+
+    setDataForFirstCalculation (data) {
+        console.log('setDataForFirstCalculation');
+        console.dir(data);
+    }
+
+    calculate () {
+        console.log('calculation');
     }
 
 
     render () {
         return <div>
             <span>Calc</span>
-            <PageOne/>
+            <PageOne funcHandlerOfCorrectlyEnteredData={ this.setDataForFirstCalculation }/>
             <Check/>
-            <button>Рассчитать</button>
+            <button onClick={ this.calculate }>Рассчитать</button>
         </div>
     }
 }

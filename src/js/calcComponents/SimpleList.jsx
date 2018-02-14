@@ -6,8 +6,8 @@ export default class SimpleList extends React.Component {
                 return '';
             } else {
                 return <li
-                    value = { item.id }
-                    key = { item.id }
+                    value={ item.id }
+                    key={ item.id }
                 >
                     { item.text }
                 </li>;
@@ -17,8 +17,8 @@ export default class SimpleList extends React.Component {
 
     render () {
         return <ul
-            className = { (this.props.filterText) ? 'show' : 'hide' }
-            onClick = { this.props.funcHandlerClickToItem }
+            className={ (this.props.filterText) ? 'show' : 'hide' }
+            onClick={ this.props.funcHandlerClickToItem }
         >
             { this.makeListOfItems() }
         </ul>

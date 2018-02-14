@@ -1,6 +1,8 @@
 import DropInListInput from './DropInListInput';
-import OutputArrayOfValues from './OutputArrayOfValues';
+import OutputOfSelectedCountries from './OutputOfSelectedCountries';
+import SimpleRadioInputsBlock from './SimpleRadioInputsBlock';
 import countries from './data/countries';
+import countriesForRadioInputs from './data/countriesForRadioInputs';
 
 
 export default class CountrySelectionBlock extends React.Component {
@@ -9,9 +11,11 @@ export default class CountrySelectionBlock extends React.Component {
 
         this.state = {
             countries: [],
+            countryInputOptions: { id: 999, countryName: 'Выбранные страны' }
         };
 
         this.pushCountry = this.pushCountry.bind(this);
+        this.handleOption = this.handleOption.bind(this);
     }
 
     pushCountry (e) {
@@ -35,58 +39,43 @@ export default class CountrySelectionBlock extends React.Component {
         });
     }
 
+    handleOption (e) {
+        this.setState({
+            countryInputOptions: {
+                id: +e.target.value,
+                countryName: e.target.innerText
+            }
+        })
+    }
+
+
+    componentDidUpdate () {
+        console.log('componentDidUpdate');
+        this.props.funcHandlerOfCorrectlyEnteredData(this.state);
+    }
+
 
     render () {
         return <div>
-            <span>CountrySelectionBlock</span>
-            <br/>
-            <span>Куда едем</span>
-            <br/>
+            <p>CountrySelectionBlock</p>
+            <p>Куда едем</p>
+
             <DropInListInput
-                arrayItems = { countries }
-                funcHandlerClickToItem = { this.pushCountry }
+                arrayItems={ countries }
+                funcHandlerClickToItem={ this.pushCountry }
             />
-            <OutputArrayOfValues
-                array = { this.state.countries }
+
+            <OutputOfSelectedCountries
+                countries={ this.state.countries }
+                countryInputOptions={ this.state.countryInputOptions }
             />
-            <div>
-                <label>
-                    <input
-                        type = "radio"
-                        name = "opions"
-                        value = "opt1"
-                        // checked = { true }
-                    />
-                    Выбранные страны
-                </label>
-                <br/>
-                <label>
-                    <input
-                        type = "radio"
-                        name = "opions"
-                        value = "opt2"
-                    />
-                    Страны шенгенского союза + выбранные
-                </label>
-                <br/>
-                <label>
-                    <input
-                        type = "radio"
-                        name = "opions"
-                        value = "opt3"
-                    />
-                    Весь мир, исключая США и Канаду
-                </label>
-                <br/>
-                <label>
-                    <input
-                        type = "radio"
-                        name = "opions"
-                        value = "opt4"
-                    />
-                    Только РФ
-                </label>
-            </div>
+
+            <SimpleRadioInputsBlock
+                array={ countriesForRadioInputs }
+                name={ 'countryOption' }
+                checkedId={ 0 }
+                funcHandlerRadioInputChecked={ this.handleOption }
+            />
         </div>
     }
 }

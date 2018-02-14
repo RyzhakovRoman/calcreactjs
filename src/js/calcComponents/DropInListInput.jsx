@@ -20,15 +20,18 @@ export default class DropInListInput extends React.Component {
     render () {
         return <div>
             <p>DropInListInput</p>
+            <p>Выпадающий список</p>
+
             <input
-                type = "text"
-                value = { this.state.filterText }
-                onChange = { this.setFilterText }
+                type="text"
+                value={ this.state.filterText }
+                onChange={ this.setFilterText }
             />
+
             <SimpleList
-                filterText = { this.state.filterText }
-                arrayItems = { this.props.arrayItems }
-                funcHandlerClickToItem = { this.props.funcHandlerClickToItem }
+                filterText={ this.state.filterText }
+                arrayItems={ this.props.arrayItems }
+                funcHandlerClickToItem={ this.props.funcHandlerClickToItem }
             />
         </div>
     }

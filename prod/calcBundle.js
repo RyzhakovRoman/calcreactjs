@@ -65,6 +65,21 @@
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(15);
+} else {
+  module.exports = __webpack_require__(16);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports) {
 
 // shim for using process in browser
@@ -254,7 +269,7 @@ process.umask = function() { return 0; };
 
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -294,21 +309,6 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(15);
-} else {
-  module.exports = __webpack_require__(16);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 3 */
@@ -429,7 +429,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = emptyObject;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 5 */
@@ -489,7 +489,7 @@ function invariant(condition, format, a, b, c, d, e, f) {
 }
 
 module.exports = invariant;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 6 */
@@ -506,7 +506,7 @@ module.exports = invariant;
 
 
 
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -558,7 +558,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 module.exports = warning;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 7 */
@@ -625,7 +625,7 @@ function checkPropTypes(typeSpecs, values, location, componentName, getStack) {
 
 module.exports = checkPropTypes;
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 8 */
@@ -682,7 +682,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -745,7 +745,7 @@ var EventListener = {
 };
 
 module.exports = EventListener;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 10 */
@@ -951,7 +951,7 @@ var _Calc2 = _interopRequireDefault(_Calc);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 _reactDom2.default.render(React.createElement(_Calc2.default, null), document.getElementById('calc'));
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 15 */
@@ -967,7 +967,7 @@ _reactDom2.default.render(React.createElement(_Calc2.default, null), document.ge
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(3),n=__webpack_require__(4),p=__webpack_require__(1),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(3),n=__webpack_require__(4),p=__webpack_require__(2),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -1007,7 +1007,7 @@ var _assign = __webpack_require__(3);
 var emptyObject = __webpack_require__(4);
 var invariant = __webpack_require__(5);
 var warning = __webpack_require__(6);
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 var checkPropTypes = __webpack_require__(7);
 
 // TODO: this is special because it gets imported during build.
@@ -2344,7 +2344,7 @@ module.exports = react;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 17 */
@@ -2409,7 +2409,7 @@ if (process.env.NODE_ENV === 'production') {
   module.exports = __webpack_require__(22);
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 19 */
@@ -2428,7 +2428,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(2),l=__webpack_require__(8),B=__webpack_require__(3),C=__webpack_require__(1),ba=__webpack_require__(9),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ia=__webpack_require__(13),D=__webpack_require__(4);
+var aa=__webpack_require__(0),l=__webpack_require__(8),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(9),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ia=__webpack_require__(13),D=__webpack_require__(4);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -2725,12 +2725,12 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(2);
+var React = __webpack_require__(0);
 var invariant = __webpack_require__(5);
 var warning = __webpack_require__(6);
 var ExecutionEnvironment = __webpack_require__(8);
 var _assign = __webpack_require__(3);
-var emptyFunction = __webpack_require__(1);
+var emptyFunction = __webpack_require__(2);
 var EventListener = __webpack_require__(9);
 var getActiveElement = __webpack_require__(10);
 var shallowEqual = __webpack_require__(11);
@@ -18103,7 +18103,7 @@ module.exports = reactDom;
   })();
 }
 
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
 
 /***/ }),
 /* 23 */
@@ -18278,7 +18278,7 @@ var _PageOne = __webpack_require__(28);
 
 var _PageOne2 = _interopRequireDefault(_PageOne);
 
-var _Check = __webpack_require__(31);
+var _Check = __webpack_require__(38);
 
 var _Check2 = _interopRequireDefault(_Check);
 
@@ -18307,12 +18307,29 @@ var Calc = function (_React$Component) {
                     amountDays: null
                 },
                 birthdaysDates: []
+            },
+            localState: {
+                step: 1
             }
         };
+
+        _this.calculate = _this.calculate.bind(_this);
+        _this.setDataForFirstCalculation = _this.setDataForFirstCalculation.bind(_this);
         return _this;
     }
 
     _createClass(Calc, [{
+        key: 'setDataForFirstCalculation',
+        value: function setDataForFirstCalculation(data) {
+            console.log('setDataForFirstCalculation');
+            console.dir(data);
+        }
+    }, {
+        key: 'calculate',
+        value: function calculate() {
+            console.log('calculation');
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -18323,11 +18340,11 @@ var Calc = function (_React$Component) {
                     null,
                     'Calc'
                 ),
-                React.createElement(_PageOne2.default, null),
+                React.createElement(_PageOne2.default, { funcHandlerOfCorrectlyEnteredData: this.setDataForFirstCalculation }),
                 React.createElement(_Check2.default, null),
                 React.createElement(
                     'button',
-                    null,
+                    { onClick: this.calculate },
                     '\u0420\u0430\u0441\u0441\u0447\u0438\u0442\u0430\u0442\u044C'
                 )
             );
@@ -18338,7 +18355,7 @@ var Calc = function (_React$Component) {
 }(React.Component);
 
 exports.default = Calc;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 28 */
@@ -18357,11 +18374,11 @@ var _CountrySelectionBlock = __webpack_require__(29);
 
 var _CountrySelectionBlock2 = _interopRequireDefault(_CountrySelectionBlock);
 
-var _TravelDatesSelectionBlock = __webpack_require__(30);
+var _TravelDatesSelectionBlock = __webpack_require__(36);
 
 var _TravelDatesSelectionBlock2 = _interopRequireDefault(_TravelDatesSelectionBlock);
 
-var _DatesOfBirthSelectionBlock = __webpack_require__(32);
+var _DatesOfBirthSelectionBlock = __webpack_require__(37);
 
 var _DatesOfBirthSelectionBlock2 = _interopRequireDefault(_DatesOfBirthSelectionBlock);
 
@@ -18379,10 +18396,32 @@ var PageOne = function (_React$Component) {
     function PageOne(props) {
         _classCallCheck(this, PageOne);
 
-        return _possibleConstructorReturn(this, (PageOne.__proto__ || Object.getPrototypeOf(PageOne)).call(this, props));
+        // this.state = {
+        //     countries: [],
+        //     countryInputOptions: {},
+        //     datesTravel: {
+        //         dateIn: '',
+        //         dateOut: '',
+        //         amountDays: null
+        //     },
+        //     birthdaysDates: []
+        // };
+
+        var _this = _possibleConstructorReturn(this, (PageOne.__proto__ || Object.getPrototypeOf(PageOne)).call(this, props));
+
+        _this.setCountries = _this.setCountries.bind(_this);
+        return _this;
     }
 
     _createClass(PageOne, [{
+        key: 'setCountries',
+        value: function setCountries(data) {
+            console.log('setCountries');
+            console.log(data);
+
+            this.props.funcHandlerOfCorrectlyEnteredData(data);
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
@@ -18393,7 +18432,7 @@ var PageOne = function (_React$Component) {
                     null,
                     'PageOne'
                 ),
-                React.createElement(_CountrySelectionBlock2.default, null),
+                React.createElement(_CountrySelectionBlock2.default, { funcHandlerOfCorrectlyEnteredData: this.setCountries }),
                 React.createElement(_TravelDatesSelectionBlock2.default, null),
                 React.createElement(_DatesOfBirthSelectionBlock2.default, null)
             );
@@ -18404,7 +18443,7 @@ var PageOne = function (_React$Component) {
 }(React.Component);
 
 exports.default = PageOne;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 29 */
@@ -18419,17 +18458,25 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _DropInListInput = __webpack_require__(33);
+var _DropInListInput = __webpack_require__(30);
 
 var _DropInListInput2 = _interopRequireDefault(_DropInListInput);
 
-var _OutputArrayOfValues = __webpack_require__(36);
+var _OutputOfSelectedCountries = __webpack_require__(32);
 
-var _OutputArrayOfValues2 = _interopRequireDefault(_OutputArrayOfValues);
+var _OutputOfSelectedCountries2 = _interopRequireDefault(_OutputOfSelectedCountries);
 
-var _countries = __webpack_require__(35);
+var _SimpleRadioInputsBlock = __webpack_require__(33);
+
+var _SimpleRadioInputsBlock2 = _interopRequireDefault(_SimpleRadioInputsBlock);
+
+var _countries = __webpack_require__(34);
 
 var _countries2 = _interopRequireDefault(_countries);
+
+var _countriesForRadioInputs = __webpack_require__(35);
+
+var _countriesForRadioInputs2 = _interopRequireDefault(_countriesForRadioInputs);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -18448,10 +18495,12 @@ var CountrySelectionBlock = function (_React$Component) {
         var _this = _possibleConstructorReturn(this, (CountrySelectionBlock.__proto__ || Object.getPrototypeOf(CountrySelectionBlock)).call(this, props));
 
         _this.state = {
-            countries: []
+            countries: [],
+            countryInputOptions: { id: 999, countryName: 'Выбранные страны' }
         };
 
         _this.pushCountry = _this.pushCountry.bind(_this);
+        _this.handleOption = _this.handleOption.bind(_this);
         return _this;
     }
 
@@ -18478,78 +18527,51 @@ var CountrySelectionBlock = function (_React$Component) {
             });
         }
     }, {
+        key: 'handleOption',
+        value: function handleOption(e) {
+            this.setState({
+                countryInputOptions: {
+                    id: +e.target.value,
+                    countryName: e.target.innerText
+                }
+            });
+        }
+    }, {
+        key: 'componentDidUpdate',
+        value: function componentDidUpdate() {
+            console.log('componentDidUpdate');
+            this.props.funcHandlerOfCorrectlyEnteredData(this.state);
+        }
+    }, {
         key: 'render',
         value: function render() {
             return React.createElement(
                 'div',
                 null,
                 React.createElement(
-                    'span',
+                    'p',
                     null,
                     'CountrySelectionBlock'
                 ),
-                React.createElement('br', null),
                 React.createElement(
-                    'span',
+                    'p',
                     null,
                     '\u041A\u0443\u0434\u0430 \u0435\u0434\u0435\u043C'
                 ),
-                React.createElement('br', null),
                 React.createElement(_DropInListInput2.default, {
                     arrayItems: _countries2.default,
                     funcHandlerClickToItem: this.pushCountry
                 }),
-                React.createElement(_OutputArrayOfValues2.default, {
-                    array: this.state.countries
+                React.createElement(_OutputOfSelectedCountries2.default, {
+                    countries: this.state.countries,
+                    countryInputOptions: this.state.countryInputOptions
                 }),
-                React.createElement(
-                    'div',
-                    null,
-                    React.createElement(
-                        'label',
-                        null,
-                        React.createElement('input', {
-                            type: 'radio',
-                            name: 'opions',
-                            value: 'opt1'
-                            // checked = { true }
-                        }),
-                        '\u0412\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0435 \u0441\u0442\u0440\u0430\u043D\u044B'
-                    ),
-                    React.createElement('br', null),
-                    React.createElement(
-                        'label',
-                        null,
-                        React.createElement('input', {
-                            type: 'radio',
-                            name: 'opions',
-                            value: 'opt2'
-                        }),
-                        '\u0421\u0442\u0440\u0430\u043D\u044B \u0448\u0435\u043D\u0433\u0435\u043D\u0441\u043A\u043E\u0433\u043E \u0441\u043E\u044E\u0437\u0430 + \u0432\u044B\u0431\u0440\u0430\u043D\u043D\u044B\u0435'
-                    ),
-                    React.createElement('br', null),
-                    React.createElement(
-                        'label',
-                        null,
-                        React.createElement('input', {
-                            type: 'radio',
-                            name: 'opions',
-                            value: 'opt3'
-                        }),
-                        '\u0412\u0435\u0441\u044C \u043C\u0438\u0440, \u0438\u0441\u043A\u043B\u044E\u0447\u0430\u044F \u0421\u0428\u0410 \u0438 \u041A\u0430\u043D\u0430\u0434\u0443'
-                    ),
-                    React.createElement('br', null),
-                    React.createElement(
-                        'label',
-                        null,
-                        React.createElement('input', {
-                            type: 'radio',
-                            name: 'opions',
-                            value: 'opt4'
-                        }),
-                        '\u0422\u043E\u043B\u044C\u043A\u043E \u0420\u0424'
-                    )
-                )
+                React.createElement(_SimpleRadioInputsBlock2.default, {
+                    array: _countriesForRadioInputs2.default,
+                    name: 'countryOption',
+                    checkedId: 0,
+                    funcHandlerRadioInputChecked: this.handleOption
+                })
             );
         }
     }]);
@@ -18558,7 +18580,7 @@ var CountrySelectionBlock = function (_React$Component) {
 }(React.Component);
 
 exports.default = CountrySelectionBlock;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 30 */
@@ -18573,402 +18595,7 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var TravelDatesSelectionBlock = function (_React$Component) {
-    _inherits(TravelDatesSelectionBlock, _React$Component);
-
-    function TravelDatesSelectionBlock(props) {
-        _classCallCheck(this, TravelDatesSelectionBlock);
-
-        return _possibleConstructorReturn(this, (TravelDatesSelectionBlock.__proto__ || Object.getPrototypeOf(TravelDatesSelectionBlock)).call(this, props));
-    }
-
-    _createClass(TravelDatesSelectionBlock, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                null,
-                React.createElement(
-                    "span",
-                    null,
-                    "TravelDatesSelectionBlock"
-                ),
-                React.createElement("br", null),
-                React.createElement(
-                    "span",
-                    null,
-                    "\u041A\u043E\u0433\u0434\u0430 \u0435\u0434\u0435\u043C"
-                ),
-                React.createElement("br", null),
-                React.createElement(
-                    "div",
-                    null,
-                    React.createElement(
-                        "label",
-                        null,
-                        "\u041E\u0434\u043D\u043E\u043A\u0440\u0430\u0442\u043D\u043E \u0441",
-                        React.createElement("br", null),
-                        React.createElement("input", { type: "datetime-local" })
-                    ),
-                    React.createElement("br", null),
-                    React.createElement(
-                        "label",
-                        null,
-                        "\u041F\u043E",
-                        React.createElement("br", null),
-                        React.createElement("input", { type: "datetime-local" })
-                    ),
-                    React.createElement("br", null),
-                    "\u041D\u0430",
-                    React.createElement("br", null),
-                    React.createElement(
-                        "select",
-                        { name: "" },
-                        React.createElement(
-                            "option",
-                            { value: "0" },
-                            "0"
-                        ),
-                        React.createElement(
-                            "option",
-                            { value: "1" },
-                            "1"
-                        ),
-                        React.createElement(
-                            "option",
-                            { value: "2" },
-                            "2"
-                        ),
-                        React.createElement(
-                            "option",
-                            { value: "3" },
-                            "3"
-                        )
-                    )
-                ),
-                React.createElement(
-                    "div",
-                    null,
-                    React.createElement(
-                        "label",
-                        null,
-                        "\u041C\u043D\u043E\u0433\u043E\u043A\u0440\u0430\u0442\u043D\u044B\u0435 \u0441",
-                        React.createElement("br", null),
-                        React.createElement("input", { type: "datetime-local" })
-                    ),
-                    React.createElement("br", null),
-                    React.createElement(
-                        "label",
-                        null,
-                        React.createElement("input", {
-                            type: "radio",
-                            name: "opions",
-                            value: "opt1"
-                        }),
-                        "30 \u0434\u043D"
-                    ),
-                    React.createElement("br", null),
-                    React.createElement(
-                        "label",
-                        null,
-                        React.createElement("input", {
-                            type: "radio",
-                            name: "opions",
-                            value: "opt2"
-                        }),
-                        "60 \u0434\u043D"
-                    ),
-                    React.createElement("br", null),
-                    React.createElement(
-                        "label",
-                        null,
-                        React.createElement("input", {
-                            type: "radio",
-                            name: "opions",
-                            value: "opt3"
-                        }),
-                        "90 \u0434\u043D"
-                    ),
-                    React.createElement("br", null),
-                    React.createElement(
-                        "label",
-                        null,
-                        React.createElement("input", {
-                            type: "radio",
-                            name: "opions",
-                            value: "opt4"
-                        }),
-                        "180 \u0434\u043D"
-                    )
-                )
-            );
-        }
-    }]);
-
-    return TravelDatesSelectionBlock;
-}(React.Component);
-
-exports.default = TravelDatesSelectionBlock;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(React) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Check = function (_React$Component) {
-    _inherits(Check, _React$Component);
-
-    function Check(props) {
-        _classCallCheck(this, Check);
-
-        return _possibleConstructorReturn(this, (Check.__proto__ || Object.getPrototypeOf(Check)).call(this, props));
-    }
-
-    _createClass(Check, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                null,
-                React.createElement(
-                    "span",
-                    null,
-                    "Check"
-                ),
-                React.createElement("br", null),
-                React.createElement(
-                    "span",
-                    null,
-                    "\u0427\u0435\u043A"
-                ),
-                React.createElement(
-                    "h3",
-                    null,
-                    "\u0414\u0430\u043D\u043D\u044B\u0435 \u0434\u043B\u044F \u0440\u0430\u0441\u0447\u0435\u0442\u0430"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u041A\u0443\u0434\u0430 \u0435\u0434\u0435\u043C: \u0415\u0433\u0438\u043F\u0435\u0442"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u041A\u043E\u0433\u0434\u0430 \u0435\u0434\u0435\u043C: 16.02.2018 - 26.02.2018"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u0414\u0430\u0442\u044B \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F \u0432\u044B\u0435\u0437\u0436\u0430\u044E\u0449\u0438\u0445: (1 \u0447\u0435\u043B.)"
-                ),
-                React.createElement(
-                    "h3",
-                    null,
-                    "\u0426\u0435\u043D\u0430 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B \u0441\u0442\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u044F (\u0438\u0442\u043E\u0433\u043E\u0432\u0430\u044F)"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u0412\u0430\u043B\u044E\u0442\u0430 \u0441\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u044F - USD"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430 - 11.18"
-                ),
-                React.createElement(
-                    "h3",
-                    null,
-                    "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u0413\u0440\u0430\u0436\u0434\u0430\u043D\u0441\u043A\u0430\u044F \u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u044C: \u043D\u0435\u0442"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u041D\u0435\u0441\u0447\u0430\u0441\u0442\u043D\u044B\u0439 \u0441\u043B\u0443\u0447\u0430\u0439: \u043D\u0435\u0442"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u0423\u0442\u0440\u0430\u0442\u0430 \u0431\u0430\u0433\u0430\u0436\u0430: \u043D\u0435\u0442"
-                ),
-                React.createElement(
-                    "p",
-                    null,
-                    "\u0410\u043A\u0442\u0438\u0432\u043D\u044B\u0439 \u043E\u0442\u0434\u044B\u0445: \u043D\u0435\u0442"
-                ),
-                React.createElement(
-                    "h2",
-                    null,
-                    "\u0418\u0422\u041E\u0413\u041E: 11.18"
-                ),
-                React.createElement(
-                    "h2",
-                    null,
-                    "\u0418\u0422\u041E\u0413\u041E (\u0432 \u0440\u0443\u0431\u043B\u044F\u0445): 648.63"
-                )
-            );
-        }
-    }]);
-
-    return Check;
-}(React.Component);
-
-exports.default = Check;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(React) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var datesOfBirthSelectionBlock = function (_React$Component) {
-    _inherits(datesOfBirthSelectionBlock, _React$Component);
-
-    function datesOfBirthSelectionBlock(props) {
-        _classCallCheck(this, datesOfBirthSelectionBlock);
-
-        return _possibleConstructorReturn(this, (datesOfBirthSelectionBlock.__proto__ || Object.getPrototypeOf(datesOfBirthSelectionBlock)).call(this, props));
-    }
-
-    _createClass(datesOfBirthSelectionBlock, [{
-        key: "render",
-        value: function render() {
-            return React.createElement(
-                "div",
-                null,
-                React.createElement(
-                    "span",
-                    null,
-                    "DatesOfBirthSelectionBlock"
-                ),
-                React.createElement("br", null),
-                React.createElement(
-                    "span",
-                    null,
-                    "\u0414\u0430\u0442\u0430 \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F"
-                ),
-                React.createElement("br", null),
-                React.createElement(
-                    "select",
-                    { name: "" },
-                    React.createElement(
-                        "option",
-                        { value: "1" },
-                        "1"
-                    ),
-                    React.createElement(
-                        "option",
-                        { value: "2" },
-                        "2"
-                    ),
-                    React.createElement(
-                        "option",
-                        { value: "3" },
-                        "3"
-                    )
-                ),
-                React.createElement(
-                    "select",
-                    { name: "" },
-                    React.createElement(
-                        "option",
-                        { value: "\u041C\u0430\u0440\u0442" },
-                        "\u041C\u0430\u0440\u0442"
-                    ),
-                    React.createElement(
-                        "option",
-                        { value: "\u0410\u043F\u0440\u0435\u043B\u044C" },
-                        "\u0410\u043F\u0440\u0435\u043B\u044C"
-                    ),
-                    React.createElement(
-                        "option",
-                        { value: "\u041C\u0430\u0439" },
-                        "\u041C\u0430\u0439"
-                    )
-                ),
-                React.createElement(
-                    "select",
-                    { name: "" },
-                    React.createElement(
-                        "option",
-                        { value: "1990" },
-                        "1990"
-                    ),
-                    React.createElement(
-                        "option",
-                        { value: "1991" },
-                        "1991"
-                    ),
-                    React.createElement(
-                        "option",
-                        { value: "1992" },
-                        "1992"
-                    )
-                )
-            );
-        }
-    }]);
-
-    return datesOfBirthSelectionBlock;
-}(React.Component);
-
-exports.default = datesOfBirthSelectionBlock;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
-
-/***/ }),
-/* 33 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(React) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _SimpleList = __webpack_require__(34);
+var _SimpleList = __webpack_require__(31);
 
 var _SimpleList2 = _interopRequireDefault(_SimpleList);
 
@@ -19014,6 +18641,11 @@ var DropInListInput = function (_React$Component) {
                     null,
                     'DropInListInput'
                 ),
+                React.createElement(
+                    'p',
+                    null,
+                    '\u0412\u044B\u043F\u0430\u0434\u0430\u044E\u0449\u0438\u0439 \u0441\u043F\u0438\u0441\u043E\u043A'
+                ),
                 React.createElement('input', {
                     type: 'text',
                     value: this.state.filterText,
@@ -19032,10 +18664,10 @@ var DropInListInput = function (_React$Component) {
 }(React.Component);
 
 exports.default = DropInListInput;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 34 */
+/* 31 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19100,10 +18732,166 @@ var SimpleList = function (_React$Component) {
 }(React.Component);
 
 exports.default = SimpleList;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
-/* 35 */
+/* 32 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(React) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var OutputOfSelectedCountries = function (_React$Component) {
+    _inherits(OutputOfSelectedCountries, _React$Component);
+
+    function OutputOfSelectedCountries() {
+        _classCallCheck(this, OutputOfSelectedCountries);
+
+        return _possibleConstructorReturn(this, (OutputOfSelectedCountries.__proto__ || Object.getPrototypeOf(OutputOfSelectedCountries)).apply(this, arguments));
+    }
+
+    _createClass(OutputOfSelectedCountries, [{
+        key: 'makeListOfItems',
+        value: function makeListOfItems() {
+            var arrCountries = [].concat(this.props.countries);
+
+            switch (this.props.countryInputOptions.id) {
+
+                case 999:
+                    return arrCountries.map(function (item) {
+                        return React.createElement(
+                            'li',
+                            { key: item.id },
+                            item.countryName
+                        );
+                    });
+
+                case 253:
+                    arrCountries.push({ id: 253, countryName: 'Страны шенгенского союза' });
+                    return arrCountries.map(function (item) {
+                        return React.createElement(
+                            'li',
+                            { key: item.id },
+                            item.countryName
+                        );
+                    });
+
+                case 254:
+                    return React.createElement(
+                        'li',
+                        { key: 254 },
+                        'Весь мир, исключая США и Канаду'
+                    );
+
+                case 252:
+                    return React.createElement(
+                        'li',
+                        { key: 252 },
+                        'Только РФ'
+                    );
+
+            }
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'ul',
+                null,
+                this.makeListOfItems()
+            );
+        }
+    }]);
+
+    return OutputOfSelectedCountries;
+}(React.Component);
+
+exports.default = OutputOfSelectedCountries;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 33 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(React) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// ожидает
+// массив из объектов { id: '', text: '' }
+
+var SimpleRadioInputsBlock = function (_React$Component) {
+    _inherits(SimpleRadioInputsBlock, _React$Component);
+
+    function SimpleRadioInputsBlock() {
+        _classCallCheck(this, SimpleRadioInputsBlock);
+
+        return _possibleConstructorReturn(this, (SimpleRadioInputsBlock.__proto__ || Object.getPrototypeOf(SimpleRadioInputsBlock)).apply(this, arguments));
+    }
+
+    _createClass(SimpleRadioInputsBlock, [{
+        key: 'makeListOfRadioInputs',
+        value: function makeListOfRadioInputs() {
+            var _this2 = this;
+
+            return this.props.array.map(function (item, i) {
+                return React.createElement(
+                    'label',
+                    {
+                        key: item.id
+                    },
+                    React.createElement('input', {
+                        type: 'radio',
+                        name: _this2.props.name,
+                        value: item.id,
+                        onChange: _this2.props.funcHandlerRadioInputChecked // определить выбранный по умолчанию
+                    }),
+                    item.text
+                );
+            });
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            return React.createElement(
+                'div',
+                null,
+                this.makeListOfRadioInputs()
+            );
+        }
+    }]);
+
+    return SimpleRadioInputsBlock;
+}(React.Component);
+
+exports.default = SimpleRadioInputsBlock;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 34 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19304,13 +19092,207 @@ exports.default = [{ id: 0, text: "Австралия" }, { id: 1, text: "Авс
 }, { id: 248, text: "Южная Осетия" }, { id: 249, text: "Япония" }, { id: 250, text: "Эритрея" }, {
     id: 251,
     text: "Ямайка"
-}, { id: 252, text: "Только РФ" }, { id: 253, text: "Страны шенгенского союза" }, {
-    id: 254,
-    text: "Весь мир, исключая США и Канаду"
 }];
 
 /***/ }),
+/* 35 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.default = [{ id: 999, text: "Выбранные страны" }, { id: 253, text: "Страны шенгенского союза + выбранные" }, { id: 254, text: "Весь мир, исключая США и Канаду" }, { id: 252, text: "Только РФ" }];
+
+/***/ }),
 /* 36 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(React) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _SimpleRadioInputsBlock = __webpack_require__(33);
+
+var _SimpleRadioInputsBlock2 = _interopRequireDefault(_SimpleRadioInputsBlock);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TravelDatesSelectionBlock = function (_React$Component) {
+    _inherits(TravelDatesSelectionBlock, _React$Component);
+
+    function TravelDatesSelectionBlock(props) {
+        _classCallCheck(this, TravelDatesSelectionBlock);
+
+        var _this = _possibleConstructorReturn(this, (TravelDatesSelectionBlock.__proto__ || Object.getPrototypeOf(TravelDatesSelectionBlock)).call(this, props));
+
+        _this.state = {
+            tripOnce: {
+                dateIn: '',
+                dateOut: '',
+                amountDays: ''
+            },
+            tripMultiple: {
+                dateIn: '',
+                amountDays: ''
+            }
+        };
+
+        _this.dataToRender = {
+            forAmountDays: [{ id: 30, text: '30 дн' }, { id: 60, text: '60 дн' }, { id: 90, text: '90 дн' }, { id: 180, text: '180 дн' }, { id: 365, text: '365 дн' }]
+        };
+
+        _this.setDate = _this.setDate.bind(_this);
+        _this.setAmountDays = _this.setAmountDays.bind(_this);
+        return _this;
+    }
+
+    // setDate(e) {
+    //     let newSt = {};
+    //     newSt.isMultiple = (e.target.name === 'dateInMultiply') ? true : false;
+    //
+    //     if (e.target.value.search(/[0-9]{4}-(0[1-9]|1[012])-(0[1-9]|1[0-9]|2[0-9]|3[01])/) === -1) {
+    //         newSt[e.target.name] = '';
+    //         this.setState(newSt);
+    //         return;
+    //     }
+    //     newSt[e.target.name] = e.target.value;
+    //     this.setState(newSt)
+    // }
+
+    _createClass(TravelDatesSelectionBlock, [{
+        key: 'setDate',
+        value: function setDate(val, typeTrip, type) {
+            this.setState(function (prevState) {
+                var newState = Object.assign({}, prevState);
+                newState[typeTrip][type] = val;
+                return newState;
+            });
+        }
+    }, {
+        key: 'setAmountDays',
+        value: function setAmountDays(val, typeTrip) {
+            this.setState(function (prevState) {
+                var newState = Object.assign({}, prevState);
+                newState[typeTrip]['amountDays'] = val;
+                return newState;
+            });
+        }
+    }, {
+        key: 'makeOptions',
+        value: function makeOptions() {
+            var options = [],
+                i = 0;
+            while (i !== 366) {
+                options.push(React.createElement(
+                    'option',
+                    { value: i, key: i },
+                    i
+                ));
+                ++i;
+            }
+            return options;
+        }
+    }, {
+        key: 'render',
+        value: function render() {
+            var _this2 = this;
+
+            return React.createElement(
+                'div',
+                null,
+                React.createElement(
+                    'p',
+                    null,
+                    'TravelDatesSelectionBlock'
+                ),
+                React.createElement(
+                    'p',
+                    null,
+                    '\u041A\u043E\u0433\u0434\u0430 \u0435\u0434\u0435\u043C'
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    React.createElement(
+                        'label',
+                        null,
+                        '\u041E\u0434\u043D\u043E\u043A\u0440\u0430\u0442\u043D\u043E \u0441',
+                        React.createElement('br', null),
+                        React.createElement('input', {
+                            type: 'text',
+                            value: this.state.tripOnce.dateIn,
+                            onChange: function onChange(e) {
+                                _this2.setDate(e.target.value, 'tripOnce', 'dateIn');
+                            },
+                            placeholder: 'yyyy-mm-dd'
+                        })
+                    ),
+                    React.createElement('br', null),
+                    React.createElement(
+                        'label',
+                        null,
+                        '\u041F\u043E',
+                        React.createElement('br', null),
+                        React.createElement('input', {
+                            type: 'text',
+                            value: this.state.tripOnce.dateOut,
+                            onChange: function onChange(e) {
+                                _this2.setDate(e.target.value, 'tripOnce', 'dateOut');
+                            },
+                            placeholder: 'yyyy-mm-dd'
+                        })
+                    ),
+                    React.createElement('br', null),
+                    '\u041D\u0430',
+                    React.createElement('br', null),
+                    React.createElement(
+                        'select',
+                        {
+                            name: 'amountDays',
+                            onClick: function onClick(e) {
+                                _this2.setAmountDays(e.target.value, 'tripOnce');
+                            }
+                        },
+                        this.makeOptions()
+                    )
+                ),
+                React.createElement(
+                    'div',
+                    null,
+                    React.createElement(_SimpleRadioInputsBlock2.default, {
+                        array: this.dataToRender.forAmountDays,
+                        name: 'countryOption',
+                        funcHandlerRadioInputChecked: function funcHandlerRadioInputChecked(e) {
+                            _this2.setAmountDays(e.target.value, 'tripMultiple');
+                        }
+                    })
+                )
+            );
+        }
+    }]);
+
+    return TravelDatesSelectionBlock;
+}(React.Component);
+
+exports.default = TravelDatesSelectionBlock;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 37 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -19328,42 +19310,224 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var OutputArrayOfValues = function (_React$Component) {
-    _inherits(OutputArrayOfValues, _React$Component);
+var datesOfBirthSelectionBlock = function (_React$Component) {
+    _inherits(datesOfBirthSelectionBlock, _React$Component);
 
-    function OutputArrayOfValues() {
-        _classCallCheck(this, OutputArrayOfValues);
+    function datesOfBirthSelectionBlock(props) {
+        _classCallCheck(this, datesOfBirthSelectionBlock);
 
-        return _possibleConstructorReturn(this, (OutputArrayOfValues.__proto__ || Object.getPrototypeOf(OutputArrayOfValues)).apply(this, arguments));
+        return _possibleConstructorReturn(this, (datesOfBirthSelectionBlock.__proto__ || Object.getPrototypeOf(datesOfBirthSelectionBlock)).call(this, props));
     }
 
-    _createClass(OutputArrayOfValues, [{
-        key: "makeListOfItems",
-        value: function makeListOfItems() {
-            return this.props.array.map(function (item) {
-                return React.createElement(
-                    "li",
-                    { key: item.id },
-                    item.countryName
-                );
-            });
-        }
-    }, {
+    _createClass(datesOfBirthSelectionBlock, [{
         key: "render",
         value: function render() {
             return React.createElement(
-                "ul",
+                "div",
                 null,
-                this.makeListOfItems()
+                React.createElement(
+                    "span",
+                    null,
+                    "DatesOfBirthSelectionBlock"
+                ),
+                React.createElement("br", null),
+                React.createElement(
+                    "span",
+                    null,
+                    "\u0414\u0430\u0442\u0430 \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F"
+                ),
+                React.createElement("br", null),
+                React.createElement(
+                    "select",
+                    { name: "" },
+                    React.createElement(
+                        "option",
+                        { value: "1" },
+                        "1"
+                    ),
+                    React.createElement(
+                        "option",
+                        { value: "2" },
+                        "2"
+                    ),
+                    React.createElement(
+                        "option",
+                        { value: "3" },
+                        "3"
+                    )
+                ),
+                React.createElement(
+                    "select",
+                    { name: "" },
+                    React.createElement(
+                        "option",
+                        { value: "\u041C\u0430\u0440\u0442" },
+                        "\u041C\u0430\u0440\u0442"
+                    ),
+                    React.createElement(
+                        "option",
+                        { value: "\u0410\u043F\u0440\u0435\u043B\u044C" },
+                        "\u0410\u043F\u0440\u0435\u043B\u044C"
+                    ),
+                    React.createElement(
+                        "option",
+                        { value: "\u041C\u0430\u0439" },
+                        "\u041C\u0430\u0439"
+                    )
+                ),
+                React.createElement(
+                    "select",
+                    { name: "" },
+                    React.createElement(
+                        "option",
+                        { value: "1990" },
+                        "1990"
+                    ),
+                    React.createElement(
+                        "option",
+                        { value: "1991" },
+                        "1991"
+                    ),
+                    React.createElement(
+                        "option",
+                        { value: "1992" },
+                        "1992"
+                    )
+                )
             );
         }
     }]);
 
-    return OutputArrayOfValues;
+    return datesOfBirthSelectionBlock;
 }(React.Component);
 
-exports.default = OutputArrayOfValues;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
+exports.default = datesOfBirthSelectionBlock;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 38 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(React) {
+
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Check = function (_React$Component) {
+    _inherits(Check, _React$Component);
+
+    function Check(props) {
+        _classCallCheck(this, Check);
+
+        return _possibleConstructorReturn(this, (Check.__proto__ || Object.getPrototypeOf(Check)).call(this, props));
+    }
+
+    _createClass(Check, [{
+        key: "render",
+        value: function render() {
+            return React.createElement(
+                "div",
+                null,
+                React.createElement(
+                    "span",
+                    null,
+                    "Check"
+                ),
+                React.createElement("br", null),
+                React.createElement(
+                    "span",
+                    null,
+                    "\u0427\u0435\u043A"
+                ),
+                React.createElement(
+                    "h3",
+                    null,
+                    "\u0414\u0430\u043D\u043D\u044B\u0435 \u0434\u043B\u044F \u0440\u0430\u0441\u0447\u0435\u0442\u0430"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u041A\u0443\u0434\u0430 \u0435\u0434\u0435\u043C: \u0415\u0433\u0438\u043F\u0435\u0442"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u041A\u043E\u0433\u0434\u0430 \u0435\u0434\u0435\u043C: 16.02.2018 - 26.02.2018"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u0414\u0430\u0442\u044B \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F \u0432\u044B\u0435\u0437\u0436\u0430\u044E\u0449\u0438\u0445: (1 \u0447\u0435\u043B.)"
+                ),
+                React.createElement(
+                    "h3",
+                    null,
+                    "\u0426\u0435\u043D\u0430 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B \u0441\u0442\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u044F (\u0438\u0442\u043E\u0433\u043E\u0432\u0430\u044F)"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u0412\u0430\u043B\u044E\u0442\u0430 \u0441\u0440\u0430\u0445\u043E\u0432\u0430\u043D\u0438\u044F - USD"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u041E\u0441\u043D\u043E\u0432\u043D\u0430\u044F \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u0430 - 11.18"
+                ),
+                React.createElement(
+                    "h3",
+                    null,
+                    "\u0414\u043E\u043F\u043E\u043B\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0435 \u043F\u0440\u043E\u0433\u0440\u0430\u043C\u043C\u044B"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u0413\u0440\u0430\u0436\u0434\u0430\u043D\u0441\u043A\u0430\u044F \u043E\u0442\u0432\u0435\u0442\u0441\u0442\u0432\u0435\u043D\u043D\u043E\u0441\u0442\u044C: \u043D\u0435\u0442"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u041D\u0435\u0441\u0447\u0430\u0441\u0442\u043D\u044B\u0439 \u0441\u043B\u0443\u0447\u0430\u0439: \u043D\u0435\u0442"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u0423\u0442\u0440\u0430\u0442\u0430 \u0431\u0430\u0433\u0430\u0436\u0430: \u043D\u0435\u0442"
+                ),
+                React.createElement(
+                    "p",
+                    null,
+                    "\u0410\u043A\u0442\u0438\u0432\u043D\u044B\u0439 \u043E\u0442\u0434\u044B\u0445: \u043D\u0435\u0442"
+                ),
+                React.createElement(
+                    "h2",
+                    null,
+                    "\u0418\u0422\u041E\u0413\u041E: 11.18"
+                ),
+                React.createElement(
+                    "h2",
+                    null,
+                    "\u0418\u0422\u041E\u0413\u041E (\u0432 \u0440\u0443\u0431\u043B\u044F\u0445): 648.63"
+                )
+            );
+        }
+    }]);
+
+    return Check;
+}(React.Component);
+
+exports.default = Check;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ })
 /******/ ]);
