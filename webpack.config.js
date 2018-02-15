@@ -8,10 +8,14 @@ const providePlugin = new webpack.ProvidePlugin({
 
 
 module.exports = {
-    entry: './src/js/app.jsx',
+    entry: {
+        calc_bundle: './src/js/app',
+        test: './src/js/test',
+        calc_vzr: './src/js/calc_vzr'
+    },
     output: {
-        filename: 'calcBundle.js',
-        path: path.resolve(__dirname, 'prod')
+        filename: '[name].js',
+        path: path.resolve(__dirname, 'prod/js')
     },
     resolve: {
         extensions: ['.jsx', '.js']
