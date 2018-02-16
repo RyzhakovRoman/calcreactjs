@@ -2,7 +2,9 @@ import List from './List';
 
 // Принимает (props):
 // array - массив объектов вида: { id: unique, text: '' }
-// handlerClickToList - функция клика по всему списку
+// returnSeletedObjOfArray - функция обратного вызова в которую возвращается элемент из переданного массива,
+//                           который хотел бы выбрать из списка пользователь
+
 export default class SearchBar extends React.Component {
     constructor (props) {
         super(props);
@@ -12,6 +14,7 @@ export default class SearchBar extends React.Component {
         };
 
         this.setFilterText = this.setFilterText.bind(this);
+        this.handleClickOnItem = this.handleClickOnItem.bind(this);
     }
 
     setFilterText (e) {
@@ -20,11 +23,16 @@ export default class SearchBar extends React.Component {
         })
     }
 
+    handleClickOnItem (item) {
+        this.setState({
+            filterText: ''
+        });
+        this.props.returnSeletedObjOfArray(item);
+    }
+
 
     render () {
         return <div>
-            <p>Поисковой бар</p>
-
             <input
                 type="text"
                 value={this.state.filterText}
@@ -34,7 +42,7 @@ export default class SearchBar extends React.Component {
             <List
                 filterText={this.state.filterText}
                 array={this.props.array}
-                handlerClick={this.props.handlerClickToList}
+                returnSeletedObjOfArray={this.handleClickOnItem}
             />
         </div>
     }
