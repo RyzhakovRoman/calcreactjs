@@ -1,7 +1,6 @@
 import SearchBar from './../commons/SearchBar';
 import RadioInputs from './../commons/RadioInputs';
 import ListWithDeletingItems from './../commons/ListWithDeletingItems';
-
 // Данные для рендеринга
 import countries from './../data/countries';
 import countries_option from './../data/countries_options';
@@ -20,6 +19,7 @@ export default class SelectOfCountriesAndOptions extends React.Component {
         };
 
         this.addCountry = this.addCountry.bind(this);
+        this.changeCountriesOption = this.changeCountriesOption.bind(this);
     }
 
     addCountry(country) {
@@ -36,15 +36,23 @@ export default class SelectOfCountriesAndOptions extends React.Component {
         })
     }
 
+    changeCountriesOption (countryOption) {
+        this.setState({
+            countries_option: countryOption
+        })
+    }
+
 
     render () {
         return <div>
             <SearchBar
                 array={countries}
-                returnSeletedObjOfArray={this.addCountry}
+                handlerSelectedItem={this.addCountry}
             />
             <RadioInputs
+                name='countriesOption'
                 array={countries_option}
+                handlerSelectedOption={this.changeCountriesOption}
             />
             {/*<ListWithDeletingItems*/}
                 {/*array={}*/}

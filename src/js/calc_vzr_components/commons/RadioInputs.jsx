@@ -1,7 +1,7 @@
 // Принимает (props):
 // array - массив объектов вида: { val: unique, label: '' }
 // name - имя для блока переключателей
-// handlerChange - функция обработки выбора
+// handlerSelectedOption - функция принимающая выбранную опцию
 
 export default class RadioInputs extends React.Component {
 
@@ -11,7 +11,7 @@ export default class RadioInputs extends React.Component {
                 <input
                     type='radio'
                     name={this.props.name}
-                    value={item.val}
+                    onChange={()=>{this.props.handlerSelectedOption(item)}}
                 />
                 <span>{item.label}</span>
                 <br/>

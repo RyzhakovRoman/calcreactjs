@@ -8,7 +8,9 @@ import ReactDOM from 'react-dom';
 
 
 // Компоненты уникальные
-import SelectOfCountriesAndOptions from './calc_vzr_components/unique/SelectOfCountriesAndOptions';
+// import SelectOfCountriesAndOptions from './calc_vzr_components/unique/SelectOfCountriesAndOptions';
+// import SelectTravelDates from './calc_vzr_components/unique/SelectTravelDates';
+import SelectDatesOfBirth from './calc_vzr_components/unique/SelectDatesOfBirth';
 
 
 // Дополнительно
@@ -18,11 +20,23 @@ import SelectOfCountriesAndOptions from './calc_vzr_components/unique/SelectOfCo
 
 
 ReactDOM.render(
-    <SelectOfCountriesAndOptions
-        // returnDeletedItemOfArray={}
-    />,
-    document.getElementById('select_of_countries_and_options')
+    <SelectDatesOfBirth/>,
+    document.getElementById('select_travel_dates')
 );
+
+
+// ReactDOM.render(
+//     <SelectTravelDates/>,
+//     document.getElementById('select_travel_dates')
+// );
+
+
+// ReactDOM.render(
+//     <SelectOfCountriesAndOptions
+//         // returnDeletedItemOfArray={}
+//     />,
+//     document.getElementById('select_of_countries_and_options')
+// );
 
 
 // ReactDOM.render(

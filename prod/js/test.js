@@ -258,21 +258,6 @@ process.umask = function() { return 0; };
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-/* WEBPACK VAR INJECTION */(function(process) {
-
-if (process.env.NODE_ENV === 'production') {
-  module.exports = __webpack_require__(16);
-} else {
-  module.exports = __webpack_require__(17);
-}
-
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
-
-/***/ }),
-/* 2 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
 
 
 /**
@@ -309,6 +294,21 @@ emptyFunction.thatReturnsArgument = function (arg) {
 };
 
 module.exports = emptyFunction;
+
+/***/ }),
+/* 2 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+/* WEBPACK VAR INJECTION */(function(process) {
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports = __webpack_require__(16);
+} else {
+  module.exports = __webpack_require__(17);
+}
+
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
 
 /***/ }),
 /* 3 */
@@ -506,7 +506,7 @@ module.exports = invariant;
 
 
 
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(1);
 
 /**
  * Similar to invariant but only logs a warning if the condition is not met.
@@ -682,7 +682,7 @@ module.exports = ExecutionEnvironment;
  * @typechecks
  */
 
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(1);
 
 /**
  * Upstream version of event listener. Does not take into account specific
@@ -945,9 +945,9 @@ var _reactDom = __webpack_require__(19);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
-var _SelectOfCountriesAndOptions = __webpack_require__(36);
+var _SelectDatesOfBirth = __webpack_require__(28);
 
-var _SelectOfCountriesAndOptions2 = _interopRequireDefault(_SelectOfCountriesAndOptions);
+var _SelectDatesOfBirth2 = _interopRequireDefault(_SelectDatesOfBirth);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -957,9 +957,21 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // import test_array_for_lwdi from './calc_vzr_components/data/test_array_for_lwdi';
 
 
-_reactDom2.default.render(React.createElement(_SelectOfCountriesAndOptions2.default
-// returnDeletedItemOfArray={}
-, null), document.getElementById('select_of_countries_and_options'));
+_reactDom2.default.render(React.createElement(_SelectDatesOfBirth2.default, null), document.getElementById('select_travel_dates'));
+
+// ReactDOM.render(
+//     <SelectTravelDates/>,
+//     document.getElementById('select_travel_dates')
+// );
+
+
+// ReactDOM.render(
+//     <SelectOfCountriesAndOptions
+//         // returnDeletedItemOfArray={}
+//     />,
+//     document.getElementById('select_of_countries_and_options')
+// );
+
 
 // ReactDOM.render(
 //     <ListWithDeletingItems
@@ -1003,7 +1015,9 @@ _reactDom2.default.render(React.createElement(_SelectOfCountriesAndOptions2.defa
 
 
 // Компоненты уникальные
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+// import SelectOfCountriesAndOptions from './calc_vzr_components/unique/SelectOfCountriesAndOptions';
+// import SelectTravelDates from './calc_vzr_components/unique/SelectTravelDates';
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ }),
 /* 16 */
@@ -1019,7 +1033,7 @@ _reactDom2.default.render(React.createElement(_SelectOfCountriesAndOptions2.defa
  * LICENSE file in the root directory of this source tree.
  */
 
-var m=__webpack_require__(3),n=__webpack_require__(4),p=__webpack_require__(2),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
+var m=__webpack_require__(3),n=__webpack_require__(4),p=__webpack_require__(1),q="function"===typeof Symbol&&Symbol["for"],r=q?Symbol["for"]("react.element"):60103,t=q?Symbol["for"]("react.call"):60104,u=q?Symbol["for"]("react.return"):60105,v=q?Symbol["for"]("react.portal"):60106,w=q?Symbol["for"]("react.fragment"):60107,x="function"===typeof Symbol&&Symbol.iterator;
 function y(a){for(var b=arguments.length-1,e="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,c=0;c<b;c++)e+="\x26args[]\x3d"+encodeURIComponent(arguments[c+1]);b=Error(e+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}
 var z={isMounted:function(){return!1},enqueueForceUpdate:function(){},enqueueReplaceState:function(){},enqueueSetState:function(){}};function A(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}A.prototype.isReactComponent={};A.prototype.setState=function(a,b){"object"!==typeof a&&"function"!==typeof a&&null!=a?y("85"):void 0;this.updater.enqueueSetState(this,a,b,"setState")};A.prototype.forceUpdate=function(a){this.updater.enqueueForceUpdate(this,a,"forceUpdate")};
 function B(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}function C(){}C.prototype=A.prototype;var D=B.prototype=new C;D.constructor=B;m(D,A.prototype);D.isPureReactComponent=!0;function E(a,b,e){this.props=a;this.context=b;this.refs=n;this.updater=e||z}var F=E.prototype=new C;F.constructor=E;m(F,A.prototype);F.unstable_isAsyncReactComponent=!0;F.render=function(){return this.props.children};var G={current:null},H=Object.prototype.hasOwnProperty,I={key:!0,ref:!0,__self:!0,__source:!0};
@@ -1059,7 +1073,7 @@ var _assign = __webpack_require__(3);
 var emptyObject = __webpack_require__(4);
 var invariant = __webpack_require__(5);
 var warning = __webpack_require__(6);
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(1);
 var checkPropTypes = __webpack_require__(7);
 
 // TODO: this is special because it gets imported during build.
@@ -2480,7 +2494,7 @@ if (process.env.NODE_ENV === 'production') {
 /*
  Modernizr 3.0.0pre (Custom Build) | MIT
 */
-var aa=__webpack_require__(1),l=__webpack_require__(8),B=__webpack_require__(3),C=__webpack_require__(2),ba=__webpack_require__(9),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ia=__webpack_require__(13),D=__webpack_require__(4);
+var aa=__webpack_require__(2),l=__webpack_require__(8),B=__webpack_require__(3),C=__webpack_require__(1),ba=__webpack_require__(9),da=__webpack_require__(10),ea=__webpack_require__(11),fa=__webpack_require__(12),ia=__webpack_require__(13),D=__webpack_require__(4);
 function E(a){for(var b=arguments.length-1,c="Minified React error #"+a+"; visit http://facebook.github.io/react/docs/error-decoder.html?invariant\x3d"+a,d=0;d<b;d++)c+="\x26args[]\x3d"+encodeURIComponent(arguments[d+1]);b=Error(c+" for the full message or use the non-minified dev environment for full errors and additional helpful warnings.");b.name="Invariant Violation";b.framesToPop=1;throw b;}aa?void 0:E("227");
 var oa={children:!0,dangerouslySetInnerHTML:!0,defaultValue:!0,defaultChecked:!0,innerHTML:!0,suppressContentEditableWarning:!0,suppressHydrationWarning:!0,style:!0};function pa(a,b){return(a&b)===b}
 var ta={MUST_USE_PROPERTY:1,HAS_BOOLEAN_VALUE:4,HAS_NUMERIC_VALUE:8,HAS_POSITIVE_NUMERIC_VALUE:24,HAS_OVERLOADED_BOOLEAN_VALUE:32,HAS_STRING_BOOLEAN_VALUE:64,injectDOMPropertyConfig:function(a){var b=ta,c=a.Properties||{},d=a.DOMAttributeNamespaces||{},e=a.DOMAttributeNames||{};a=a.DOMMutationMethods||{};for(var f in c){ua.hasOwnProperty(f)?E("48",f):void 0;var g=f.toLowerCase(),h=c[f];g={attributeName:g,attributeNamespace:null,propertyName:f,mutationMethod:null,mustUseProperty:pa(h,b.MUST_USE_PROPERTY),
@@ -2777,12 +2791,12 @@ if (process.env.NODE_ENV !== "production") {
   (function() {
 'use strict';
 
-var React = __webpack_require__(1);
+var React = __webpack_require__(2);
 var invariant = __webpack_require__(5);
 var warning = __webpack_require__(6);
 var ExecutionEnvironment = __webpack_require__(8);
 var _assign = __webpack_require__(3);
-var emptyFunction = __webpack_require__(2);
+var emptyFunction = __webpack_require__(1);
 var EventListener = __webpack_require__(9);
 var getActiveElement = __webpack_require__(10);
 var shallowEqual = __webpack_require__(11);
@@ -18326,12 +18340,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
-var _List = __webpack_require__(29);
-
-var _List2 = _interopRequireDefault(_List);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -18339,610 +18347,107 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 // Принимает (props):
-// array - массив объектов вида: { id: unique, text: '' }
-// returnSeletedObjOfArray - функция обратного вызова в которую возвращается элемент из переданного массива,
-//                           который хотел бы выбрать из списка пользователь
+//
 
-var SearchBar = function (_React$Component) {
-    _inherits(SearchBar, _React$Component);
+var SelectDatesOfBirth = function (_React$Component) {
+    _inherits(SelectDatesOfBirth, _React$Component);
 
-    function SearchBar(props) {
-        _classCallCheck(this, SearchBar);
+    function SelectDatesOfBirth(props) {
+        _classCallCheck(this, SelectDatesOfBirth);
 
-        var _this = _possibleConstructorReturn(this, (SearchBar.__proto__ || Object.getPrototypeOf(SearchBar)).call(this, props));
+        var _this = _possibleConstructorReturn(this, (SelectDatesOfBirth.__proto__ || Object.getPrototypeOf(SelectDatesOfBirth)).call(this, props));
 
         _this.state = {
-            filterText: ''
+            dates: ['']
         };
 
-        _this.setFilterText = _this.setFilterText.bind(_this);
-        _this.handleClickOnItem = _this.handleClickOnItem.bind(_this);
+        _this.addDate = _this.addDate.bind(_this);
+        _this.changeDate = _this.changeDate.bind(_this);
         return _this;
     }
 
-    _createClass(SearchBar, [{
-        key: 'setFilterText',
-        value: function setFilterText(e) {
-            this.setState({
-                filterText: e.target.value
-            });
-        }
-    }, {
-        key: 'handleClickOnItem',
-        value: function handleClickOnItem(item) {
-            this.setState({
-                filterText: ''
-            });
-            this.props.returnSeletedObjOfArray(item);
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                React.createElement('input', {
-                    type: 'text',
-                    value: this.state.filterText,
-                    onChange: this.setFilterText
-                }),
-                React.createElement(_List2.default, {
-                    filterText: this.state.filterText,
-                    array: this.props.array,
-                    returnSeletedObjOfArray: this.handleClickOnItem
-                })
-            );
-        }
-    }]);
-
-    return SearchBar;
-}(React.Component);
-
-exports.default = SearchBar;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 29 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(React) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Принимает (props):
-// array - массив объектов вида: { id: unique, text: '' }
-// handlerClick - функция клика по всему списку
-
-var List = function (_React$Component) {
-    _inherits(List, _React$Component);
-
-    function List() {
-        _classCallCheck(this, List);
-
-        return _possibleConstructorReturn(this, (List.__proto__ || Object.getPrototypeOf(List)).apply(this, arguments));
-    }
-
-    _createClass(List, [{
-        key: 'makeListOfItems',
-        value: function makeListOfItems() {
-            var _this2 = this;
-
-            return this.props.array.map(function (item) {
-                if (item.text.toLowerCase().indexOf(_this2.props.filterText.toLowerCase()) === -1) {
-                    return '';
-                } else {
-                    return React.createElement(
-                        'li',
-                        {
-                            key: item.id,
-                            onClick: function onClick() {
-                                _this2.props.returnSeletedObjOfArray(item);
-                            }
-                        },
-                        item.text
-                    );
-                }
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'ul',
-                {
-                    className: this.props.filterText ? 'show' : 'hide',
-                    onClick: this.props.handlerClick
-                },
-                this.makeListOfItems()
-            );
-        }
-    }]);
-
-    return List;
-}(React.Component);
-
-exports.default = List;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 30 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(React) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Принимает (props):
-// array - массив объектов вида: { val: unique, label: '' }
-// name - имя для блока переключателей
-// handlerChange - функция обработки выбора
-
-var RadioInputs = function (_React$Component) {
-    _inherits(RadioInputs, _React$Component);
-
-    function RadioInputs() {
-        _classCallCheck(this, RadioInputs);
-
-        return _possibleConstructorReturn(this, (RadioInputs.__proto__ || Object.getPrototypeOf(RadioInputs)).apply(this, arguments));
-    }
-
-    _createClass(RadioInputs, [{
-        key: 'getRadioInputsOfArray',
-        value: function getRadioInputsOfArray() {
-            var _this2 = this;
-
-            return this.props.array.map(function (item) {
-                return React.createElement(
-                    'label',
-                    { key: item.val },
-                    React.createElement('input', {
-                        type: 'radio',
-                        name: _this2.props.name,
-                        value: item.val
-                    }),
-                    React.createElement(
-                        'span',
-                        null,
-                        item.label
-                    ),
-                    React.createElement('br', null)
-                );
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'div',
-                null,
-                this.getRadioInputsOfArray()
-            );
-        }
-    }]);
-
-    return RadioInputs;
-}(React.Component);
-
-exports.default = RadioInputs;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 31 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = [{ id: 0, text: "Австралия" }, { id: 1, text: "Австрия" }, { id: 2, text: "Азербайджан" }, {
-    id: 3,
-    text: "Азорские острова"
-}, { id: 4, text: "Аландские острова" }, { id: 5, text: "Албания" }, { id: 6, text: "Алжир" }, {
-    id: 7,
-    text: "Американские Виргинские острова"
-}, { id: 8, text: "Американское Самоа" }, { id: 9, text: "Ангилья" }, { id: 10, text: "Ангола" }, {
-    id: 11,
-    text: "Андорра"
-}, { id: 12, text: "Антигуа и Барбуда" }, { id: 13, text: "Аргентина" }, { id: 14, text: "Армения" }, {
-    id: 15,
-    text: "Аруба"
-}, { id: 16, text: "Афганистан" }, { id: 17, text: "Багамы" }, { id: 18, text: "Бангладеш" }, {
-    id: 19,
-    text: "Барбадос"
-}, { id: 20, text: "Бахрейн" }, { id: 21, text: "Белиз" }, { id: 22, text: "Белоруссия" }, {
-    id: 23,
-    text: "Бельгия"
-}, { id: 24, text: "Бенин" }, { id: 25, text: "Бермуды" }, { id: 26, text: "Болгария" }, {
-    id: 27,
-    text: "Боливия"
-}, { id: 28, text: "Босния и Герцеговина (БиГ)" }, { id: 29, text: "Ботсвана" }, { id: 30, text: "Бразилия" }, {
-    id: 31,
-    text: "Британская территория в Индийском океане"
-}, { id: 32, text: "Британские Виргинские острова" }, { id: 33, text: "Бруней" }, {
-    id: 34,
-    text: "Буркина Фасо (бывшая Верхняя Вольта)"
-}, { id: 35, text: "Бурунди" }, { id: 36, text: "Бутан" }, { id: 37, text: "Вануату" }, {
-    id: 38,
-    text: "Ватикан"
-}, { id: 39, text: "Великобритания" }, { id: 40, text: "Венгрия" }, { id: 41, text: "Венесуэла" }, {
-    id: 42,
-    text: "Восточный Тимор"
-}, { id: 43, text: "Вьетнам" }, { id: 44, text: "Габон" }, { id: 45, text: "Гавайи" }, { id: 46, text: "Гайана" }, {
-    id: 47,
-    text: "Гаити"
-}, { id: 48, text: "Гамбия" }, { id: 49, text: "Гана" }, { id: 50, text: "Гваделупа" }, {
-    id: 51,
-    text: "Гватемала"
-}, { id: 52, text: "Гвиана - Французская Гвиана" }, { id: 53, text: "Гвинея" }, { id: 54, text: "Гвинея-Бисау" }, {
-    id: 55,
-    text: "Германия"
-}, { id: 56, text: "Гернси" }, { id: 57, text: "Гибралтар" }, { id: 58, text: "Гондурас" }, {
-    id: 59,
-    text: "Гонконг (Сянган)"
-}, { id: 60, text: "Гренада" }, { id: 61, text: "Гренландия" }, { id: 62, text: "Греция" }, {
-    id: 63,
-    text: "Грузия"
-}, { id: 64, text: "Гуам" }, { id: 65, text: "Дания" }, { id: 66, text: "Джерси" }, { id: 67, text: "Джибути" }, {
-    id: 68,
-    text: "Доминика"
-}, { id: 69, text: "Доминиканская Республика" }, { id: 70, text: "ДР Конго" }, { id: 71, text: "Египет" }, {
-    id: 72,
-    text: "Замбия"
-}, { id: 73, text: "Зимбабве" }, { id: 74, text: "Йемен" }, { id: 75, text: "Израиль" }, { id: 76, text: "Индия" }, {
-    id: 77,
-    text: "Индонезия"
-}, { id: 78, text: "Иордания" }, { id: 79, text: "Ирак" }, { id: 80, text: "Иран" }, { id: 81, text: "Ирландия" }, {
-    id: 82,
-    text: "Исландия"
-}, { id: 83, text: "Испания" }, { id: 84, text: "Италия" }, { id: 85, text: "Кабо-Верде" }, {
-    id: 86,
-    text: "Казахстан"
-}, { id: 87, text: "Каймановы острова" }, { id: 88, text: "Камбоджа" }, { id: 89, text: "Камерун" }, {
-    id: 90,
-    text: "Канада"
-}, { id: 91, text: "Катар" }, { id: 92, text: "Кения" }, { id: 93, text: "Кипр" }, { id: 94, text: "Киргизия" }, {
-    id: 95,
-    text: "Кирибати"
-}, { id: 96, text: "Китай" }, { id: 97, text: "Китай (Тайвань)" }, { id: 98, text: "КНДР" }, {
-    id: 99,
-    text: "Кокосовые острова"
-}, { id: 100, text: "Колумбия" }, { id: 101, text: "Коморы" }, { id: 102, text: "Коста-Рика" }, {
-    id: 103,
-    text: "Кот-д’Ивуар"
-}, { id: 104, text: "Куба" }, { id: 105, text: "Кувейт" }, { id: 106, text: "Лаос" }, { id: 107, text: "Латвия" }, {
-    id: 108,
-    text: "Лесото"
-}, { id: 109, text: "Либерия" }, { id: 110, text: "Ливан" }, { id: 111, text: "Ливия" }, {
-    id: 112,
-    text: "Литва"
-}, { id: 113, text: "Лихтенштейн" }, { id: 114, text: "Люксембург" }, { id: 115, text: "Маврикий" }, {
-    id: 116,
-    text: "Мавритания"
-}, { id: 117, text: "Мадагаскар" }, { id: 118, text: "Мадейра" }, { id: 119, text: "Майотта" }, {
-    id: 120,
-    text: "Макао"
-}, { id: 121, text: "Малави" }, { id: 122, text: "Малайзия" }, { id: 123, text: "Мали" }, {
-    id: 124,
-    text: "Мальдивы"
-}, { id: 125, text: "Мальта" }, { id: 126, text: "Марокко" }, { id: 127, text: "Мартиника" }, {
-    id: 128,
-    text: "Маршалловы Острова"
-}, { id: 129, text: "Мексика" }, { id: 130, text: "Мозамбик" }, { id: 131, text: "Молдавия" }, {
-    id: 132,
-    text: "Монако"
-}, { id: 133, text: "Монголия" }, { id: 134, text: "Монтсеррат" }, { id: 135, text: "Мьянма" }, {
-    id: 136,
-    text: "Нагорно-Карабахская Республика"
-}, { id: 137, text: "Намибия" }, { id: 138, text: "Науру" }, { id: 139, text: "Непал" }, {
-    id: 140,
-    text: "Нигер"
-}, { id: 141, text: "Нигерия" }, { id: 142, text: "Нидерландские Антильские острова" }, {
-    id: 143,
-    text: "Нидерланды"
-}, { id: 144, text: "Никарагуа" }, { id: 145, text: "Ниуэ" }, { id: 146, text: "Новая Зеландия" }, {
-    id: 147,
-    text: "Новая Каледония"
-}, { id: 148, text: "Норвегия" }, { id: 149, text: "ОАЭ" }, { id: 150, text: "Оман" }, {
-    id: 151,
-    text: "Остров Мэн"
-}, { id: 152, text: "Остров Норфолк" }, { id: 153, text: "Остров Рождества" }, {
-    id: 154,
-    text: "Остров Святой Елены"
-}, { id: 155, text: "Острова Кука" }, { id: 156, text: "Острова Питкэрн" }, { id: 157, text: "Пакистан" }, {
-    id: 158,
-    text: "Палау"
-}, { id: 159, text: "Палестина" }, { id: 160, text: "Панама" }, { id: 161, text: "Папуа — Новая Гвинея" }, {
-    id: 162,
-    text: "Парагвай"
-}, { id: 163, text: "Перу — Республика Перу" }, { id: 164, text: "Польша" }, { id: 165, text: "Португалия" }, {
-    id: 166,
-    text: "Приднестровская Молдавская Республика"
-}, { id: 167, text: "Пуэрто-Рико" }, { id: 168, text: "Абхазия" }, { id: 169, text: "Республика Конго" }, {
-    id: 170,
-    text: "Корея"
-}, { id: 171, text: "Косово" }, { id: 172, text: "Македония" }, { id: 173, text: "Реюньон" }, {
-    id: 174,
-    text: "Россия"
-}, { id: 175, text: "Руанда" }, { id: 176, text: "Румыния" }, { id: 177, text: "Сальвадор" }, {
-    id: 178,
-    text: "Самоа"
-}, { id: 179, text: "Сан-Марино" }, { id: 180, text: "Сан-Томе и Принсипи" }, {
-    id: 181,
-    text: "Саудовская Аравия"
-}, { id: 182, text: "Сахарская Арабская Демократическая Республика" }, { id: 183, text: "Свазиленд" }, {
-    id: 184,
-    text: "Северные Марианские острова"
-}, { id: 185, text: "Сейшельские Острова" }, { id: 186, text: "Сенегал" }, {
-    id: 187,
-    text: "Сен-Пьер и Микелон"
-}, { id: 188, text: "Сент-Винсент и Гренадины" }, { id: 189, text: "Сент-Китс и Невис" }, {
-    id: 190,
-    text: "Сент-Люсия"
-}, { id: 191, text: "Сербия" }, { id: 192, text: "Силенд" }, { id: 193, text: "Сингапур" }, {
-    id: 194,
-    text: "Сирия"
-}, { id: 195, text: "Словакия" }, { id: 196, text: "Словения" }, { id: 197, text: "Соломоновы Острова" }, {
-    id: 198,
-    text: "Сомали"
-}, { id: 199, text: "Сомалиленд" }, { id: 200, text: "Судан" }, { id: 201, text: "Суринам" }, {
-    id: 202,
-    text: "США"
-}, { id: 203, text: "Соединенные Штаты Америки" }, { id: 204, text: "Сьерра-Леоне" }, {
-    id: 205,
-    text: "Таджикистан"
-}, { id: 206, text: "Таиланд" }, { id: 207, text: "Танзания" }, { id: 208, text: "Тёркс и Кайкос" }, {
-    id: 209,
-    text: "Того"
-}, { id: 210, text: "Токелау" }, { id: 211, text: "Тонга" }, { id: 212, text: "Тринидад и Тобаго" }, {
-    id: 213,
-    text: "Тувалу"
-}, { id: 214, text: "Тунис" }, { id: 215, text: "Турецкая Республика Северного Кипра" }, {
-    id: 216,
-    text: "Туркмения"
-}, { id: 217, text: "Турция" }, { id: 218, text: "Уганда" }, { id: 219, text: "Узбекистан" }, {
-    id: 220,
-    text: "Украина"
-}, { id: 221, text: "Уоллис и Футуна" }, { id: 222, text: "Уругвай" }, { id: 223, text: "Фарерские острова" }, {
-    id: 224,
-    text: "Федеративные Штаты Микронезии"
-}, { id: 225, text: "Фиджи" }, { id: 226, text: "Филиппины" }, { id: 227, text: "Финляндия" }, {
-    id: 228,
-    text: "Фолклендские острова"
-}, { id: 229, text: "Франция" }, { id: 230, text: "Французская Полинезия" }, {
-    id: 231,
-    text: "Французские Южные и Антарктические Территории"
-}, { id: 232, text: "Хорватия" }, { id: 233, text: "ЦАР" }, { id: 234, text: "Чад" }, {
-    id: 235,
-    text: "Черногория"
-}, { id: 236, text: "Чехия" }, { id: 237, text: "Чили" }, { id: 238, text: "Швейцария" }, {
-    id: 239,
-    text: "Швеция"
-}, { id: 240, text: "Шпицберген" }, { id: 241, text: "Шри-Ланка" }, { id: 242, text: "Эквадор" }, {
-    id: 243,
-    text: "Экваториальная Гвинея"
-}, { id: 244, text: "Эстония" }, { id: 245, text: "Эфиопия" }, { id: 246, text: "ЮАР" }, {
-    id: 247,
-    text: "Южная Георгия и Южные Сандвичевы острова"
-}, { id: 248, text: "Южная Осетия" }, { id: 249, text: "Япония" }, { id: 250, text: "Эритрея" }, {
-    id: 251,
-    text: "Ямайка"
-}];
-
-/***/ }),
-/* 32 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.default = [{ val: 0, label: 'Выбранные страны' }, { val: 1, label: 'Страны шенгенского союза + выбранные' }, { val: 2, label: 'Весь мир, исключая США и Канаду' }, { val: 3, label: 'Только РФ' }];
-
-/***/ }),
-/* 33 */,
-/* 34 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(React) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Принимает (props):
-// array - массив объектов вида: { val: unique, text: '' }
-// returnDeletedObjOfArray - функция обратного вызова в которую возвращается элемент из переданного массива,
-//                           который хотел бы удалить из списка пользователь
-
-var ListWithDeletingItems = function (_React$Component) {
-    _inherits(ListWithDeletingItems, _React$Component);
-
-    function ListWithDeletingItems() {
-        _classCallCheck(this, ListWithDeletingItems);
-
-        return _possibleConstructorReturn(this, (ListWithDeletingItems.__proto__ || Object.getPrototypeOf(ListWithDeletingItems)).apply(this, arguments));
-    }
-
-    _createClass(ListWithDeletingItems, [{
-        key: 'makeListOfItems',
-        value: function makeListOfItems() {
-            var _this2 = this;
-
-            return this.props.array.map(function (item) {
-                return React.createElement(
-                    'li',
-                    {
-                        key: item.val
-                    },
-                    item.text,
-                    React.createElement(
-                        'span',
-                        {
-                            style: { color: 'red', cursor: 'pointer' },
-                            onClick: function onClick() {
-                                _this2.props.returnDeletedObjOfArray(item);
-                            }
-                        },
-                        '\xA0\u0443\u0434.'
-                    )
-                );
-            });
-        }
-    }, {
-        key: 'render',
-        value: function render() {
-            return React.createElement(
-                'ul',
-                null,
-                this.makeListOfItems()
-            );
-        }
-    }]);
-
-    return ListWithDeletingItems;
-}(React.Component);
-
-exports.default = ListWithDeletingItems;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
-
-/***/ }),
-/* 35 */,
-/* 36 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-/* WEBPACK VAR INJECTION */(function(React) {
-
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-
-var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
-
-var _SearchBar = __webpack_require__(28);
-
-var _SearchBar2 = _interopRequireDefault(_SearchBar);
-
-var _RadioInputs = __webpack_require__(30);
-
-var _RadioInputs2 = _interopRequireDefault(_RadioInputs);
-
-var _ListWithDeletingItems = __webpack_require__(34);
-
-var _ListWithDeletingItems2 = _interopRequireDefault(_ListWithDeletingItems);
-
-var _countries = __webpack_require__(31);
-
-var _countries2 = _interopRequireDefault(_countries);
-
-var _countries_options = __webpack_require__(32);
-
-var _countries_options2 = _interopRequireDefault(_countries_options);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
-
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// Данные для рендеринга
-
-
-// Принимает (props):
-// array - массив объектов вида: { val: unique, text: '' }
-// returnDeletedObjOfArray -
-
-var SelectOfCountriesAndOptions = function (_React$Component) {
-    _inherits(SelectOfCountriesAndOptions, _React$Component);
-
-    function SelectOfCountriesAndOptions(props) {
-        _classCallCheck(this, SelectOfCountriesAndOptions);
-
-        var _this = _possibleConstructorReturn(this, (SelectOfCountriesAndOptions.__proto__ || Object.getPrototypeOf(SelectOfCountriesAndOptions)).call(this, props));
-
-        _this.state = {
-            countries: [],
-            countries_option: {}
-        };
-
-        _this.addCountry = _this.addCountry.bind(_this);
-        return _this;
-    }
-
-    _createClass(SelectOfCountriesAndOptions, [{
-        key: 'addCountry',
-        value: function addCountry(country) {
+    _createClass(SelectDatesOfBirth, [{
+        key: "addDate",
+        value: function addDate() {
             this.setState(function (prevState) {
-                var matchFlag = prevState.countries.some(function (c) {
-                    return c === country;
-                });
+                var nDates = void 0;
 
-                if (!matchFlag) {
-                    return {
-                        countries: prevState.countries.concat(country)
-                    };
+                if (prevState.dates.length === 5) {
+                    return;
                 }
+
+                nDates = [].concat(prevState.dates);
+                nDates.push("");
+
+                return {
+                    dates: nDates
+                };
             });
         }
     }, {
-        key: 'render',
+        key: "changeDate",
+        value: function changeDate(date, iPerson) {
+            this.setState(function (prevState) {
+                var nDates = [].concat(prevState.dates);
+
+                if (date.search(/(0[1-9]|1[0-9]|2[0-9]|3[01])-(0[1-9]|1[012])-[0-9]{4}/) !== -1) {
+                    nDates[iPerson] = date;
+                } else {
+                    nDates[iPerson] = "";
+                }
+
+                return {
+                    dates: nDates
+                };
+            });
+        }
+    }, {
+        key: "makeInputs",
+        value: function makeInputs() {
+            var _this2 = this;
+
+            return this.state.dates.map(function (date, i) {
+                return React.createElement(
+                    "label",
+                    { key: i },
+                    i + 1,
+                    " \u0432\u044B\u0435\u0437\u0436\u0430\u044E\u0449\u0438\u0439",
+                    React.createElement("input", {
+                        type: "text",
+                        placeholder: "\u0434\u0434-\u043C\u043C-\u0433\u0433\u0433\u0433",
+                        onChange: function onChange(e) {
+                            _this2.changeDate(e.target.value, i);
+                        }
+                    })
+                );
+            });
+        }
+    }, {
+        key: "render",
         value: function render() {
             return React.createElement(
-                'div',
+                "div",
                 null,
-                React.createElement(_SearchBar2.default, {
-                    array: _countries2.default,
-                    returnSeletedObjOfArray: this.addCountry
-                }),
-                React.createElement(_RadioInputs2.default, {
-                    array: _countries_options2.default
-                })
+                React.createElement(
+                    "p",
+                    null,
+                    "\u0414\u0430\u0442\u0430 \u0440\u043E\u0436\u0434\u0435\u043D\u0438\u044F"
+                ),
+                this.makeInputs(),
+                React.createElement(
+                    "button",
+                    { onClick: this.addDate },
+                    "+"
+                )
             );
         }
     }]);
 
-    return SelectOfCountriesAndOptions;
+    return SelectDatesOfBirth;
 }(React.Component);
 
-exports.default = SelectOfCountriesAndOptions;
-/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(1)))
+exports.default = SelectDatesOfBirth;
+/* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(2)))
 
 /***/ })
 /******/ ]);

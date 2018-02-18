@@ -2,8 +2,8 @@ import List from './List';
 
 // Принимает (props):
 // array - массив объектов вида: { id: unique, text: '' }
-// returnSeletedObjOfArray - функция обратного вызова в которую возвращается элемент из переданного массива,
-//                           который хотел бы выбрать из списка пользователь
+// handlerSelectedItem - функция обратного вызова в которую возвращается элемент из переданного массива,
+//                       который хотел бы выбрать из списка пользователь
 
 export default class SearchBar extends React.Component {
     constructor (props) {
@@ -27,7 +27,7 @@ export default class SearchBar extends React.Component {
         this.setState({
             filterText: ''
         });
-        this.props.returnSeletedObjOfArray(item);
+        this.props.handlerSelectedItem(item);
     }
 
 

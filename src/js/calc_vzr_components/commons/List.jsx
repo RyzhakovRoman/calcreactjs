@@ -1,6 +1,8 @@
 // Принимает (props):
 // array - массив объектов вида: { id: unique, text: '' }
-// handlerClick - функция клика по всему списку
+// filterText - текст для фильтрации массива перед выводом
+// handlerSelectedItem - функция обратного вызова в которую возвращается элемент из переданного массива,
+//                       который хотел бы выбрать из списка пользователь
 
 export default class List extends React.Component {
 
@@ -11,7 +13,7 @@ export default class List extends React.Component {
             } else {
                 return <li
                     key={item.id}
-                    onClick={()=>{this.props.returnSeletedObjOfArray(item)}}
+                    onClick={()=>{this.props.handlerSelectedItem(item)}}
                 >
                     {item.text}
                 </li>;
@@ -21,10 +23,7 @@ export default class List extends React.Component {
 
 
     render () {
-        return <ul
-            className={(this.props.filterText) ? 'show' : 'hide'}
-            onClick={this.props.handlerClick}
-        >
+        return <ul className={(this.props.filterText) ? 'show' : 'hide'}>
             {this.makeListOfItems()}
         </ul>
     }
